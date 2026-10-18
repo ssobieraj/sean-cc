@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Page not found · ${SITE_TITLE}`} description="This page doesn't exist." />
+		<meta name="robots" content="noindex" />
+	</head>
+	<body>
+		<main>
+			<h1 class="lead">Page not found</h1>
+			<p>The page you're looking for doesn't exist or has moved.</p>
+			<p><a href="/">Go to the home page</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.lead {
+		font-size: 1.45em;
+		font-weight: 600;
+		margin-bottom: 0.6rem;
+	}
+</style>
