@@ -1,4 +1,5 @@
 {
+  // Must match the Worker name in Cloudflare, or builds fail.
   "name": "sean-cc",
   "compatibility_date": "2026-10-01",
   "assets": {
