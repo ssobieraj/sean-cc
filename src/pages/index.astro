@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import portrait from '../assets/sean-sobieraj.jpeg';
 ---
 
 <!doctype html>
@@ -12,17 +14,31 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		{/* No header bar on the home page: the name in the lead line is the page title. */}
 		<main>
-			<h1 class="lead">
-				I'm <strong>Sean Sobieraj</strong>, a cybersecurity data architect working toward semantic
-				models and knowledge graphs.
-			</h1>
-			<p class="links">
-				<a href="/resume/">Resume</a>
-				<span aria-hidden="true">/</span>
-				<a href="https://www.linkedin.com/in/sobieraj/" rel="me">LinkedIn</a>
-				<span aria-hidden="true">/</span>
-				<a href="https://github.com/ssobieraj" rel="me">GitHub</a>
-			</p>
+			{/* Portrait beside the lead line; stacks above it on narrow screens. */}
+			<div class="intro">
+				<Image
+					src={portrait}
+					alt="Sean Sobieraj"
+					width={180}
+					height={180}
+					densities={[1, 2, 3]}
+					loading="eager"
+					class="portrait"
+				/>
+				<div>
+					<h1 class="lead">
+						I'm <strong>Sean Sobieraj</strong>, a cybersecurity data architect working toward
+						semantic models and knowledge graphs.
+					</h1>
+					<p class="links">
+						<a href="/resume/">Resume</a>
+						<span aria-hidden="true">/</span>
+						<a href="https://www.linkedin.com/in/sobieraj/" rel="me">LinkedIn</a>
+						<span aria-hidden="true">/</span>
+						<a href="https://github.com/ssobieraj" rel="me">GitHub</a>
+					</p>
+				</div>
+			</div>
 
 			<p>
 				I work at the Cybersecurity and Infrastructure Security Agency (CISA) as a Senior Data
@@ -86,5 +102,30 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	.links a:hover {
 		color: var(--accent-hover);
 		text-decoration: underline;
+	}
+	.intro {
+		display: flex;
+		align-items: center;
+		gap: 1.75em;
+		margin-bottom: 2.5em;
+	}
+	.intro .links {
+		margin-bottom: 0;
+	}
+	.portrait {
+		flex: 0 0 auto;
+		width: 180px;
+		height: 180px;
+	}
+	@media (max-width: 560px) {
+		.intro {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1.25em;
+		}
+		.portrait {
+			width: 160px;
+			height: 160px;
+		}
 	}
 </style>
