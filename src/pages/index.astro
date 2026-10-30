@@ -4,12 +4,13 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import portrait from '../assets/sean-sobieraj.jpeg';
+import shareImage from '../assets/og-image.png';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image={shareImage} />
 	</head>
 	<body>
 		{/* No header bar on the home page: the name in the lead line is the page title. */}
@@ -27,15 +28,15 @@ import portrait from '../assets/sean-sobieraj.jpeg';
 				/>
 				<div>
 					<h1 class="lead">
-						I'm <strong>Sean Sobieraj</strong>, a cybersecurity data architect working toward
-						semantic models and knowledge graphs.
+						I'm <strong>Sean Sobieraj</strong>, a cybersecurity data architect focused on making
+						security data consistent, connected, and reusable.
 					</h1>
 					<p class="links">
 						<a href="/resume/">Resume</a>
 						<span aria-hidden="true">/</span>
 						<a href="https://www.linkedin.com/in/sobieraj/" rel="me">LinkedIn</a>
 						<span aria-hidden="true">/</span>
-						<a href="https://github.com/ssobieraj" rel="me">GitHub</a>
+						<a href="mailto:sean@sean.cc">Email</a>
 					</p>
 				</div>
 			</div>
@@ -54,11 +55,10 @@ import portrait from '../assets/sean-sobieraj.jpeg';
 				teams.
 			</p>
 			<p>
-				I started out in the U.S. Marine Corps, where I helped maintain a base network for 35,000
-				users and rose to sergeant. I earned a B.S. from the Rochester Institute of Technology, then an
-				M.S. in Information Security from Purdue University's CERIAS on a federal Scholarship for Service, which
-				led me to US-CERT. There I analyzed malware and eventually led the malware analysis team, before
-				serving as a Duty Officer in the White House Situation Room at the National Security Council.
+				I started out in the U.S. Marine Corps, maintaining a base network for 35,000 users. A federal
+				Scholarship for Service took me through an M.S. in Information Security at Purdue's CERIAS and
+				on to US-CERT, where I led the malware analysis team, before I served as a Duty Officer in the
+				White House Situation Room at the National Security Council.
 			</p>
 			<p>
 				Back at DHS, I designed and built the malware triage and reporting platform. It cut the time to
